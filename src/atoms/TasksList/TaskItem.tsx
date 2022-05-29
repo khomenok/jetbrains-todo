@@ -31,30 +31,28 @@ const TaskItem: Component<TaskItemProps> = (props) => {
   );
 
   return (
-        <ul class={styles.list}>
-            <li class={cx(props.task.status === 'COMPLETED' && styles.completedTask)}>
-                <input
-                    class={styles.statusCheckbox}
-                    type="checkbox"
-                    checked={props.task.status === 'COMPLETED'}
-                    onClick={() => handleStatusChange()}
-                />
-                <input
-                    class={styles.input}
-                    value={props.task.description}
-                    onChange={handleInputChange}
-                    placeholder='Start typing a new item'
-                />
-                <div class={styles.actions}>
-                    <button
-                      onClick={() => props.onRemoveTask(props.taskId)}
-                      class={styles.removeButton}
-                    >
-                        <img src={removeButton} alt="removeButton" />
-                    </button>
-                </div>
-            </li>
-        </ul>
+    <li class={cx(props.task.status === 'COMPLETED' && styles.completedTask)}>
+      <input
+        class={styles.statusCheckbox}
+        type="checkbox"
+        checked={props.task.status === 'COMPLETED'}
+        onClick={() => handleStatusChange()}
+      />
+      <input
+        class={styles.input}
+        value={props.task.description}
+        onChange={handleInputChange}
+        placeholder='Start typing a new item'
+      />
+      <div class={styles.actions}>
+        <button
+          onClick={() => props.onRemoveTask(props.taskId)}
+          class={styles.removeButton}
+        >
+          <img src={removeButton} alt="removeButton" />
+        </button>
+      </div>
+    </li>
   );
 };
 

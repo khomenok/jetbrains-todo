@@ -19,7 +19,7 @@ const getChartData = (completedTasks: TaskWithId[]) => {
   return result;
 };
 
-const WEEK_LABELS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const WEEK_LABELS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const CompletedTasksChart: Component<CompletedTasksChartProps> = (props) => {
   const chartData = createMemo(() => getChartData(props.tasks));
