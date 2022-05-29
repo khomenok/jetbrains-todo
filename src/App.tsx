@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import {from} from "solid-js";
+import {createMemo, from} from "solid-js";
 
 import styles from './App.module.css';
 import {$comletedTasks, $existingTasks, addTask, editTask, removeTask} from "./models/tasks/init";
@@ -12,8 +12,8 @@ const App: Component = () => {
   const completedTasks = from($comletedTasks);
   const existingTasks = from($existingTasks);
 
-  const totalTasks = completedTasks().length + existingTasks().length;
-  const successPercent = totalTasks !== 0 ?  completedTasks().length / totalTasks : null;
+  const totalTasks = createMemo(() => completedTasks().length + existingTasks().length);
+  const successPercent = createMemo(() => totalTasks() !== 0 ? completedTasks().length / totalTasks() : null);
 
   return (
     <div class={styles.App}>
@@ -24,7 +24,7 @@ const App: Component = () => {
               Author
               <span>Vladimir Khomenok</span>
             </div>
-            {successPercent !== null ? <ChartLine value={successPercent} title={`${completedTasks().length}/${totalTasks}`} /> : undefined}
+            {successPercent() !== null ? <ChartLine value={successPercent() || 0} title={`${completedTasks().length}/${totalTasks()}`} /> : undefined}
         </div>
       </header>
       <section class={styles.content}>
@@ -36,7 +36,7 @@ const App: Component = () => {
           <section class={styles.tasksSection}>
               <h2>Completed Tasks</h2>
               <TasksList tasks={completedTasks()} onEditTask={editTask} onRemoveTask={removeTask} />
-              <CompletedTasksChart tasks={completedTasks()} />
+              {completedTasks().length > 0 && <CompletedTasksChart tasks={completedTasks()} />}
           </section>
       </section>
     </div>

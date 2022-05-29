@@ -23,11 +23,12 @@ const WEEK_LABELS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 const CompletedTasksChart: Component<CompletedTasksChartProps> = (props) => {
     const chartData = createMemo(() => getChartData(props.tasks));
+    const sum = createMemo(() => chartData().reduce((sum, val) => sum + val, 0));
 
     return (
         <div class={styles.container}>
             <For each={chartData()}>{(dayValue, day) => (
-                <ChartLine value={dayValue / 12} title={WEEK_LABELS[day()]} />
+                <ChartLine value={dayValue / sum()} title={WEEK_LABELS[day()]} />
             )}</For>
         </div>
     );
