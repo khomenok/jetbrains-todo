@@ -1,19 +1,19 @@
-ul.list {
+.list {
     display: block;
     padding-left: 0;
 }
 
-ul.list > li {
+.list > li {
     display: flex;
     align-items: center;
     padding: 6px 16px;
 }
 
-ul.list > li:hover {
+.list > li:hover {
     background: rgba(22, 125, 255, 0.07);
 }
 
-ul.list > li .statusCheckbox {
+.list > li .statusCheckbox {
     width: 14px;
     height: 14px;
     min-width: 14px;
@@ -22,37 +22,38 @@ ul.list > li .statusCheckbox {
     margin-right: 8px;
 }
 
-ul.list > li .input {
+.list > li .input {
     border: none;
     background: none;
     color: #0c0c0d;
     outline: none;
-    margin-right: 8px;
+    margin: 0 8px 0 0;
     flex: 1 1;
     text-overflow: ellipsis;
     overflow: hidden;
     padding: 0;
+    font-size: 15px;
 }
 
-ul.list > li .input::placeholder {
+.list > li .input::placeholder {
     color: rgba(128, 128, 128, 0.75);
 }
 
-ul.list > li.completedTask .input {
+.list > li.completedTask .input {
     color: rgb(128, 128, 128);
 }
 
-ul.list > li.completedTask .input::placeholder {
+.list > li.completedTask .input::placeholder {
     color: rgba(128, 128, 128, 0.5);
 }
 
-ul.list > li .actions {
+.list > li .actions {
     width: 20px;
     display: flex;
     flex-direction: row-reverse;
 }
 
-ul.list > li .removeButton {
+.list > li .removeButton {
     display: none;
     background: none;
     border: none;
@@ -62,10 +63,10 @@ ul.list > li .removeButton {
     cursor: pointer;
 }
 
-ul.list > li .removeButton img {
+.list > li .removeButton img {
     width: 100%;
 }
 
-ul.list > li:hover .removeButton {
+.list > li:hover .removeButton {
     display: block;
 }

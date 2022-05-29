@@ -23,6 +23,7 @@ export const $tasksWithId: Store<TaskWithId[]> = $tasks
     .map(tasks => tasks.map((task, id) => ({task, id})).filter(({task}) => !task.removed));
 
 export const addTask = createEvent<string | undefined>();
+export const addTasks = createEvent<Task[]>();
 export const editTask = createEvent<TaskWithId>();
 export const removeTask = createEvent<TaskWithId['id']>();
 
@@ -30,6 +31,8 @@ $tasks.on(addTask, (tasks, description) => [
     ...tasks,
     {description: description || '', status: 'EXISTING'},
 ]);
+
+$tasks.on(addTasks, (tasks, newTasks) => [...tasks, ...newTasks]);
 
 $tasks.on(editTask, (tasks, {task, id}) => [
     ...tasks.slice(0, id),

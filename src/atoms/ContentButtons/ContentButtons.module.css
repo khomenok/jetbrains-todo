@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    margin-top: 16px;
+}
+
+.button {
+    display: block;
+    background: white;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid rgb(12, 12, 13);
+    font-size: 15px;
+    padding: 0 8px 1px;
+    color: rgb(12, 12, 13);
+    width: min-content;
+    cursor: pointer;
+    line-height: 21px;
+    margin: 0;
+}
+
+.button > input {
+    display: none;
+}
+
+.button > * {
+    cursor: pointer;
+}
+
+.button + .button {
+    margin-left: 12px;
+}
