@@ -1,33 +1,50 @@
 .App {
-  text-align: center;
-}
-
-.logo {
-  animation: logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
 }
 
 .header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: white;
+  font-size: 15px;
+  color: #0c0c0d;
+  box-shadow: 0 8px 16px 0 rgb(12 40 97 / 5%);
+  padding: 16px 32px;
 }
 
-.link {
-  color: #b318f0;
+h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: rgb(12, 12, 13);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(12, 12, 13);
+}
+
+.author {
+  font-size: 15px;
+  color: rgb(143, 148, 153);
+}
+
+.author > span {
+  color: rgb(85, 121, 167);
+  margin-left: 8px;
+}
+
+.content {
+  padding: 16px 32px;
+}
+
+.tasksSection {
+  margin-bottom: 16px;
+}
+
+.addNewButton {
+  border: none;
+  color: #5579a7;
+  cursor: pointer;
+  outline: none;
+  background: none;
+  font-size: 15px;
+  padding: 2px 16px;
 }

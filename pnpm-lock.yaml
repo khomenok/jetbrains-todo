@@ -1,12 +1,16 @@
 lockfileVersion: 5.4
 
 specifiers:
+  classnames: ^2.3.1
+  effector: ^22.3.0
   solid-js: ^1.4.2
   typescript: ^4.6.4
   vite: ^2.9.9
   vite-plugin-solid: ^2.2.6
 
 dependencies:
+  classnames: 2.3.1
+  effector: 22.3.0
   solid-js: 1.4.2
 
 devDependencies:
@@ -407,6 +411,10 @@ packages:
       supports-color: 5.5.0
     dev: true
 
+  /classnames/2.3.1:
+    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
+    dev: false
+
   /color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
     dependencies:
@@ -434,6 +442,11 @@ packages:
     dependencies:
       ms: 2.1.2
     dev: true
+
+  /effector/22.3.0:
+    resolution: {integrity: sha512-Nh7IXn8U4emq8YtAZf2+y2Rs6n4W/gjPaNZpZLFOXOIAsRZSNBFjtK1vHTWNKxxmNFZOaZN6XUXdT8FDs0mAdQ==}
+    engines: {node: '>=11.0.0'}
+    dev: false
 
   /electron-to-chromium/1.4.93:
     resolution: {integrity: sha512-ywq9Pc5Gwwpv7NG767CtoU8xF3aAUQJjH9//Wy3MBCg4w5JSLbJUq2L8IsCdzPMjvSgxuue9WcVaTOyyxCL0aQ==}
